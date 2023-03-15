@@ -1,10 +1,25 @@
-import {RenderPosition, render} from './render.js';
-import Filter from './view/trip-filters-view.js';
-import Trip from './presenter/trip-events-presenter.js';
+import EventsModel from './model/events-model.js';
+import MenuView from './view/menu-view.js';
+import FilterView from './view/filter-view.js';
+import { render, RenderPosition } from './render.js';
+import SortingView from './view/sorting-view';
+import TripInfoView from './view/trip-info-view';
+import RootPresenter from './presenter/root-presenter.js';
 
-const filterContainer = document.querySelector('.trip-controls__filters');
-const tripContainer = document.querySelector('.trip-events');
-const tripPresenter = new Trip({container: tripContainer});
+const headerElement = document.querySelector('.page-header');
+const mainElement = document.querySelector('.page-main');
 
-render(new Filter(), filterContainer, RenderPosition.BEFOREEND);
-tripPresenter.init();
+const tripMainElement = document.querySelector('.trip-main');
+const navigation = headerElement.querySelector('.trip-controls__navigation');
+const filters = headerElement.querySelector('.trip-controls__filters');
+const content = mainElement.querySelector('.trip-events');
+
+const routePresenter = new RootPresenter();
+const eventsModel = new EventsModel();
+
+render(new MenuView(), navigation);
+render(new TripInfoView(), tripMainElement, RenderPosition.AFTERBEGIN);
+render(new FilterView(), filters);
+render(new SortingView(), content);
+
+routePresenter.init(content, eventsModel);

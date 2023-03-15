@@ -13,10 +13,29 @@ root = true
 [*]
 charset = utf-8
 end_of_line = lf
-indent_size = 2
+indent_size = 4
 indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
+eol-last:S ["error", "never"]
+module.exports = {
+    "extends": "eslint:recommended",
+    "rules": {
+        // enable additional rules
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"],
+
+        // override default options for rules from base configurations
+        "comma-dangle": ["error", "always"],
+        "no-cond-assign": ["error", "always"],
+
+        // disable rules from base configurations
+        "no-console": "off",
+    }
+}
 
 [*.md]
 trim_trailing_whitespace = false
+

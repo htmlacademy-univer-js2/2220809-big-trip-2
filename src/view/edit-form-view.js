@@ -148,4 +148,6 @@ export default class EditFormView {
   removeElement() {
     this.element = null;
   }
+
+  
 }

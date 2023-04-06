@@ -1,22 +1,23 @@
-import { createElement } from '../render.js';
+import { createElement } from '../render';
 
-const createEventsListTemplate = () =>
-  '<ul class="trip-events__list">\
-  </ul>';
+const createEmptyListTemplate = () => (
+  '<p class="trip-events__msg">Click New Event to create your first point</p>'
+);
 
-export default class EventsListView {
+export default class EmptyListView {
   constructor() {
     this._element = null;
   }
 
   get template() {
-    return createEventsListTemplate();
+    return createEmptyListTemplate();
   }
 
   get element() {
     if (!this._element) {
       this._element = createElement(this.template);
     }
+
     return this._element;
   }
 

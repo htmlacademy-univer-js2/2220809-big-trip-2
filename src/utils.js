@@ -49,6 +49,14 @@ const filter = {
   [FILTER_TYPES.PAST]: (events) => events.filter((event) => isEventPassed(event.startDate, event.endDate))
 };
 
+const update = (items, updatedItem) =>
+  items.map((item) => {
+    if (item.id === updatedItem.id) {
+      return updatedItem;
+    }
+    return item;
+  });
+
 export {
   getRandomInteger,
   convertEventDateIntoDay,
@@ -60,5 +68,6 @@ export {
   isEventPassed,
   checkFavoriteOption,
   capitalizeFirstLetter,
-  filter
+  filter,
+  update
 };

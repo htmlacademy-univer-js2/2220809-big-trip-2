@@ -28,13 +28,13 @@ const createSortingTemplate = (sortType) =>
     </div>
   </form>`;
 
-  export default class SortingView extends AbstractView {
-    #sortType;
+export default class SortingView extends AbstractView {
+  #sortType;
 
-    constructor(sortType) {
-      super();
-      this.#sortType = sortType;
-    }
+  constructor(sortType) {
+    super();
+    this.#sortType = sortType;
+  }
 
   get template() {
     return createSortingTemplate(this.#sortType);

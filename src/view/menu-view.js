@@ -6,8 +6,7 @@ const createMenuTemplate = () =>
     <a class="trip-tabs__btn" href="#">Stats</a>\
   </nav>';
 
-  export default class MenuView extends AbstractView {
-
+export default class MenuView extends AbstractView {
   get template() {
     return createMenuTemplate();
   }

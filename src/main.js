@@ -45,4 +45,5 @@ eventsModel.init()
     newEventButtonComponent.setClickHandler(openNewEventFormHandler);
   });
 render(new MenuView(), navigationElement);
+
 tripInfoPresenter.init();

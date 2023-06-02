@@ -70,4 +70,5 @@ export {
   sortByPrice,
   sortByDuration,
   sortByDate
+
 };

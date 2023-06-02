@@ -77,4 +77,5 @@ function remove(component) {
   component.removeElement();
 }
 
+
 export {RenderPosition, createElement, render, replace, remove};

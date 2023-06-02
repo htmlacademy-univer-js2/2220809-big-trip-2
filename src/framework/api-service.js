@@ -67,4 +67,4 @@ export default class ApiService {
   static catchError(err) {
     throw err;
   }
-} 
+}

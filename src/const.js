@@ -94,5 +94,4 @@ export {
   UPDATE_TYPES,
   NEW_POINT,
   TIME_LIMIT
-  
 };

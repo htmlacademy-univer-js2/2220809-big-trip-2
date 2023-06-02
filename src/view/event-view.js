@@ -96,4 +96,3 @@ export default class EventView extends AbstractView {
     this._callback.favorite();
   };
 }
-

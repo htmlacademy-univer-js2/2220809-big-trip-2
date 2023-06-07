@@ -2,7 +2,7 @@ import { render, remove, RenderPosition } from '../framework/render.js';
 import TripInfoView from '../view/trip-info-view';
 import { sortByDate } from '../utils';
 
-export default class TripInfoPresenter {
+export default class InfoPresenter {
   #tripInfoContainer = null;
   #eventsModel = null;
   #tripInfoComponent = null;
@@ -37,7 +37,6 @@ export default class TripInfoPresenter {
       render(this.#tripInfoComponent, this.#tripInfoContainer, RenderPosition.AFTERBEGIN);
     }
   };
-
 
   destroy = () => {
     if (!this.#tripInfoComponent) {
